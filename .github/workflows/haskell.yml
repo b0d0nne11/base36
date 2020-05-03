@@ -38,3 +38,12 @@ jobs:
       run: cabal v2-build --enable-tests --enable-benchmarks
     - name: Run tests
       run: cabal v2-run base36-test
+    - name: Run linter
+      run: curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s src
+    - name: Build documentation
+      run: cabal v2-haddock
+    - uses: actions/upload-artifact@v2
+      name: Upload documentation
+      with:
+        name: docs
+        path: dist-newstyle/build/**/doc/html/base36/

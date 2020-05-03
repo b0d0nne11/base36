@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- | Helpers for transforming integral value to and from alphanumeric, case-insensative text
 module Data.Text.Base36
   ( encode
   , decode
@@ -10,7 +11,7 @@ import           Data.Char             (chr, ord, toLower)
 import           Data.Text             (Text)
 import qualified Data.Text             as T
 
--- | Encode an integral number into base36 text
+-- | Encode a value into base36 text
 encode :: Integral a => a -> Text
 encode 0 = "a"
 encode i
@@ -20,7 +21,7 @@ encode i
     dms = divMod i 36 : next dms
     next ((d, _) : dms') = divMod d 36 : next dms'
 
--- | Decode base36 text into an integral number
+-- | Decode base36 text into a value
 decode :: Integral a => Text -> a
 decode "" = 0
 decode str
