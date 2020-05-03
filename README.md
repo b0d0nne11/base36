@@ -1,6 +1,6 @@
 # base36
 
-![](https://github.com/b0d0nne11/base36/workflows/Haskell%20CI/badge.svg)
+![Haskell CI](https://github.com/b0d0nne11/base36/workflows/Haskell%20CI/badge.svg)
 
 This package provides support for transforming integral values to and from
 alphanumeric, case-insensative text. I wrote it to help generate the left hand
