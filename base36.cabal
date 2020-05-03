@@ -1,0 +1,36 @@
+name:                base36
+version:             0.1.0
+synopsis:            Base36 encoding of integral values
+homepage:            https://github.com/b0d0nne11/base36
+bug-reports:         https://github.com/b0d0nne11/base36/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Brendan O'Donnell
+maintainer:          brendan@odonnell.xyz
+copyright:           Copyright (c) 2020, Brendan O'Donnell
+category:            Text
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+                   , README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Data.Text.Base36
+  build-depends:       base >=4.12 && <4.13
+                     , text
+  default-language:    Haskell2010
+
+test-suite base36-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Main.hs
+  build-depends:       base >=4.12 && <4.13
+                     , base36
+                     , HUnit
+                     , QuickCheck
+                     , test-framework
+                     , test-framework-hunit
+                     , test-framework-quickcheck2
+                     , text
+  default-language:    Haskell2010
